@@ -38,9 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'social_django',
     'L_cafe_prj',
-    'auth0login',
+    'ledger',
 ]
 
 MIDDLEWARE = [
@@ -103,10 +102,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTHENTICATION_BACKENDS = {
-    'YOUR_DJANGO_APP_NAME.auth0backend.Auth0',
-    'django.contrib.auth.backends.ModelBackend'
-}
 
 SOCIAL_AUTH_AUTH0_SCOPE = [
     'openid',
@@ -120,11 +115,11 @@ SOCIAL_AUTH_AUTH0_SCOPE = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)

@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>L-cafe ledger program</h2>
+        <div class="crud">
+
+            <a href="/edit_ledger/read">장부 조회</a>
+            <button type="button" class="btn btn-primary" href="create.html">장부 생성</button>
+            <button type="button" class="btn btn-success" onclick="location.href='read.html'">장부 조회</button>
+            <button type="button" class="btn btn-danger" href="update.html">장부 수정</button>
+            <button type="button" class="btn btn-warning" href="update_item.html">품목 수정</button>
+        
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

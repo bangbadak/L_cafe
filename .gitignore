@@ -130,6 +130,7 @@ dmypy.json
 
 # Pycharm
 .idea/
+migrations/
 
 
 # Erase these when the project is end.
