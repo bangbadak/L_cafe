@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'social_django',
+    'L_cafe_prj',
+    'auth0login',
 ]
 
 MIDDLEWARE = [
@@ -99,6 +103,17 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = {
+    'YOUR_DJANGO_APP_NAME.auth0backend.Auth0',
+    'django.contrib.auth.backends.ModelBackend'
+}
+
+SOCIAL_AUTH_AUTH0_SCOPE = [
+    'openid',
+    'profile',
+    'email'
+]
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
@@ -121,3 +136,13 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Auth0
+SOCIAL_AUTH_TRAILING_SLASH = False  # Remove trailing slash from routes
+SOCIAL_AUTH_AUTH0_DOMAIN = 'l-cafe.us.auth0.com'
+SOCIAL_AUTH_AUTH0_KEY = 'xO7v4R3GmZjBcxGLC4oggwHPqzCHSa0x'
+SOCIAL_AUTH_AUTH0_SECRET = 'DFkwdkf2d42Dfje9fe21Fds'
+
+LOGIN_URL = '/login/auth0'
+LOGIN_REDIRECT_URL = '/dashboard'
+SITE_ID = 1
