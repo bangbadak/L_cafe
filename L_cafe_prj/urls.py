@@ -19,7 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('login/', include('auth0login.urls')),
-    path('edit_ledger/', include('ledger.urls')),
+    path('l_cafe_ledger/', include('ledger.urls')),
     path('', include('ledger.urls')),
 ]
