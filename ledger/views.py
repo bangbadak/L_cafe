@@ -31,14 +31,18 @@ def read(request):
         },
     )
 
-def read_single_ledger(request, read):
-    page_num = {
-        'page_num': read,
-    }
+def read_single_ledger(request, pk):
+
+    id = Ledger.objects.get(pk=pk)
+    order_list = Order.objects.all()
+
     return render(
         request, 
         'read_single_ledger.html',
-        page_num,
+        {
+            'order_list': order_list,
+            'id': id,
+        },
     )
 
 # def update(request):
