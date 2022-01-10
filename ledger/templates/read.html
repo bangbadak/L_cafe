@@ -15,12 +15,12 @@
         </div>
     </nav>
     <div class="container">
-        <h2>장부 리스트</h2>
+        <h2>장부 조회</h2>
         <div class="ledger_list">
             {% for p in ledger %}
 
 
-            <a href="{{ p.get_absolute_url }}">
+            <a href="{{ p.get_absolute_url_read }}">
                 <div class="card">
                     <div class="card-body">
                         {{ p.identification }}

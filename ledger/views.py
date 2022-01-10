@@ -45,7 +45,30 @@ def read_single_ledger(request, pk):
         },
     )
 
-# def update(request):
+def update(request):
+
+    ledgers = Ledger.objects.all()
+
+    return render(
+        request,
+        'update.html',
+        {
+            'ledger': ledgers,
+        }
+    )
+
+def update_single_ledger(request, pk):
+
+    id = Ledger.objects.get(pk=pk)
+    order_list = Order.objects.all()
+    return render(
+        request,
+        'update_single_ledger.html',
+        {
+            'order_list': order_list,
+            'id': id,
+        },
+    )
 
 
 # def update_item(request)

@@ -12,8 +12,11 @@ class Ledger(models.Model):
     def __str__(self):
         return DateFormat(datetime.now()).format('Y년m월d일')
     
-    def get_absolute_url(self):
+    def get_absolute_url_read(self):
         return f'/edit_ledger/read/{self.pk}/'
+    
+    def get_absolute_url_update(self):
+        return f'/edit_ledger/update/{self.pk}/'
 
 
 
