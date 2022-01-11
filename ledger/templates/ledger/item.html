@@ -23,37 +23,27 @@
         <div class="col-2"></div>
 
 
-        <div class="col-7">
+        <div class="col-3">
             <div class="row my-3">
-                <div class="col-3 bg-info">
-                    주문 번호
-                </div>
-                <div class="col-3 bg-danger">
-                    주문자
-                </div>
-                <div class="col-3 bg-warning">
+                <div class="col bg-info">
                     품목
                 </div>
-                <div class="col-3 bg-secondary">
-                    개수
+                <div class="col bg-danger">
+                    가격
                 </div>
+                
             </div>
 
-            {% for p in order_list %}
-            {% if p.identification == id.identification %}
+            {% for i in items %}
 
                 <ul class="list-group list-group-horizontal my-1 row">
-                    <li class="list-group-item col-3">{{ p.number }}</li>
-                    <li class="list-group-item col-3">{{ p.orderer }}</li>
-                    <li class="list-group-item col-3">{{ p.item }}</li>
-                    <li class="list-group-item col-3">{{ p.count }}</li>
+                    <li class="list-group-item col">{{ i.name }}</li>
+                    <li class="list-group-item col">{{ i.cost }}</li>
                 </ul>
         
-
-            
-            {% endif %}
             {% endfor %}
         </div>
+        <div class="col-4"></div>
         <div class="col-1">
             <div class="card my-3">
                 <div class="card-header">
@@ -62,12 +52,14 @@
                 <div class="card-body">
                     <!-- 미완; 버튼 클릭시 URL 수정. -->
                     <!-- <button type="button" style="width: 106px; height: 40px;" class="btn btn-outline-success mb-2" onclick="location.href='./update'">수정</button> -->
-                    <button type="button" style="width: 106px; height: 40px;" class="btn btn-outline-success" onclick="location.href='./order'">주문 추가</button>
+                    <!-- <button type="button" style="width: 106px; height: 40px;" class="btn btn-outline-success mb-2" onclick="location.href='./delete'">품목 삭제</button> -->
+                    <button type="button" style="width: 106px; height: 40px;" class="btn btn-outline-success" onclick="location.href='./add'">품목 추가</button>
 
                 </div>
             </div>
+
         </div>
-        <div class="col-2"></div>
+        <div class="col"></div>
 
 
 

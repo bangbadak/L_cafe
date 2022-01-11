@@ -20,22 +20,17 @@
         
         <div class="card" style="width:700px;">
             <div class="card-header">
-                주문 추가
+                품목 추가
             </div>
             <div class="card-body">
-                <form method="POST" class="post-form" action="{% url 'single_ledger_order' pk %}">
+                <form method="POST" class="post-form" action="{% url 'add_item' %}">
                     {% csrf_token %}
+                    
                     <div>
-                    주문 번호: <input class="mb-1" type="number" name="order_num" value="0">
+                        품목 이름: <input class="mb-1" type="text" name="item_name">
                     </div>
                     <div>
-                        주문자: <input class="mb-1" type="text" name="orderer">
-                    </div>
-                    <div>
-                        품목: <input class="mb-1" type="text" name="order_item">
-                    </div>
-                    <div>
-                        개수: <input class="mb-1" type="number" name="count" value="1">
+                        가격 (엘): <input class="mb-1" type="number" name="item_cost" value="1">
                         <button type="submit" class="btn btn-outline-primary" style="margin-left: 300px;">추가하기</button>
                     </div>
 

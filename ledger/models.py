@@ -10,11 +10,12 @@ class Ledger(models.Model):
     date = models.DateTimeField(auto_now_add=True, blank=True)
 
 
-    def __str__(self):
-        return DateFormat(datetime.now()).format('Y년m월d일')
     
     def get_absolute_url_update(self):
         return f'/l_cafe_ledger/ledgers/{self.pk}/'
+
+    def get_absolute_url(self):
+        return f'/l_cafe_ledger/ledgers/'
 
 
 
@@ -25,3 +26,8 @@ class Order(models.Model):
     orderer = models.CharField(max_length=5)
     item = models.CharField(max_length=20)
     count = models.IntegerField(default=1)
+
+class Item(models.Model):
+
+    name = models.CharField(max_length=20)
+    cost = models.IntegerField()
